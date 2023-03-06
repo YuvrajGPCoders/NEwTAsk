@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Loginpage from "./NewComponents/LoginPage";
+
+import { Routes, Route } from "react-router-dom";
+import AdminPanel from "./NewComponents/AdminPanel";
+import HomePage from "./NewComponents/HomePage";
+import FormShorting from "./NewComponents/FormShorting";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  
+      <Routes>
+         <Route exact path="/" name="Login Page" element={<Loginpage/>} /> 
+       <Route exact path="/adminpage" name="adminpage" element={<AdminPanel/>} /> 
+       <Route exact path="/homepage" name="homepage" element={<HomePage/>} /> 
+       <Route exact path="/shorting" name="shorting" element={<FormShorting/>} /> 
+      </Routes>
     </div>
   );
 }
